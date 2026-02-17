@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- instructors.html  22 Nov 2019 04:22:05 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/flaticon.css">
+    <link rel="stylesheet" href="/css/lightcase.css">
+    <link rel="stylesheet" href="/css/odometer.css">
+    <link rel="stylesheet" href="/css/swiper.min.css">
+    <link rel="stylesheet" href="/css/nice-select.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+
+    <title>Drivon - Swimming School HTML Template</title>
+
+
+</head>
+
+<body>
+<!-- ==========Preloader========== -->
+<div class="preloader">
+    <div class="preloader-wrapper">
+        <img src="/css/ajax-loader.gif" alt="ajax-loader">
+    </div>
+</div>
+<!-- ==========Preloader========== -->
+
+<!-- ==========scrolltotop========== -->
+<a href="#" class="scrollToTop" title="ScrollToTop">
+    <img src="/images/rocket.png" alt="rocket">
+</a>
+<!-- ==========scrolltotop========== -->
+
+<!-- ==========header-section========== -->
+<header class="header-section">
+
+    <div class="header-bottom">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="/images/logo/logo.png" alt="logo">
+                    </a>
+                </div>
+                <ul class="menu ml-auto">
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="#0">Courses</a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="course">Course</a>
+                            </li>
+                            <li>
+                                <a href="courseDetails">Course Details</a>
+                            </li>
+                            <li>
+                                <a href="courseSchedule">Class Schedule</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#0">Pages</a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="#0">Instructors</a>
+                                <ul class="submenu">
+                                    <li>
+                                        <a href="instructor">Instructors</a>
+                                    </li>
+                                    <li>
+                                        <a href="instructorProfile">Instructors Details</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="admissionForm">admission</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#0">Account</a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="login">sign in</a>
+                            </li>
+                            <li>
+                                <a href="register">sign up</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="header-bar d-lg-none">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="search-area">
+                    <li>
+                        <a class="search-bar" href="#0">
+                            <i class="flaticon-magnifying-glass"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="cart-button" href="#0">
+                            <i class="flaticon-shopping-cart"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="search-form-area">
+        <span class="hide-form">
+            <i class="fas fa-times"></i>
+        </span>
+    <form class="search-form">
+        <input type="text" placeholder="Search Here">
+        <button type="submit"><i class="flaticon-search"></i></button>
+    </form>
+</div>
+<!-- ===========Header Cart=========== -->
+
+
+<!-- ==========hero-area========== -->
+<section class="hero-section">
+    <div class="hero-area bg_img" data-background="/images/about/hero-bg.jpg">
+        <div class="container">
+            <h1 class="title">instructors</h1>
+        </div>
+    </div>
+    <div class="container">
+        <ul class="breadcrumb">
+            <li>
+                <a href="">home</a>
+            </li>
+            <li>
+                instructors
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- ==========hero-area========== -->
+
+<!-- ==========instructors-section========== -->
+<section class="instructors-section padding-top padding-bottom">
+    <div class="container" th:each="instructor: ${instructorList}">
+        <div class="row mb-30-none justify-content-center">
+            <div class="col-md-6 col-lg-4 col-sm-10">
+                <div class="instructor-item instructor-item-two">
+                    <div class="c-thumb">
+                        <a href="instructorProfile">
+                            <!-- Dynamically load the image using JavaScript -->
+                            <img id="instructorImage" src="/images/instructor/my.jpg" alt="Instructor Image">
+                        </a>
+                    </div>
+                    <div class="instructor-content">
+                        <h4 class="sub-title">
+                            <a href="instructorProfile" th:text="${instructor.getInstructorName()}"></a>
+                        </h4>
+                        <span class="d-block" th:text="${instructor.getCourseNames()}"></span>
+                        <ul class="social">
+                            <li>
+                                <a href="#0">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#0">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#0">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Simulated function to convert Hex to Base64
+    function hexToBase64(hex) {
+        let raw = '';
+        for (let i = 0; i < hex.length; i += 2) {
+            raw += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+        }
+        return btoa(raw); // Convert raw string to Base64
+    }
+
+    // Assuming each instructor has a BLOB image stored as a Hexadecimal string
+    document.addEventListener('DOMContentLoaded', function () {
+        // Retrieve the hex string from the backend (replace with actual instructor image data)
+        const instructorImageHex = '3437343632313438385F313331323938373938363731373230315F313835303131363233313234353938313033325F6E2E6A7067'; // Replace with actual hex string
+
+        const base64Image = hexToBase64(instructorImageHex); // Convert Hex to Base64
+        const imageElement = document.getElementById('instructorImage');
+
+        // Set the src to the Base64 image data
+        imageElement.src = 'data:image/jpeg;base64,' + base64Image;
+    });
+</script>
+
+<!-- ==========instructors-section========== -->
+
+<!-- ==========overview-section========== -->
+<!-- ==========overview-section========== -->
+
+
+<!-- ==========call-in-section========== -->
+<section class="call-in-action padding-bottom padding-top bg-ash">
+    <div class="container">
+        <div class="call-in-area">
+            <h2 class="title">Have Any Questions About drivon</h2>
+            <p></p>
+            <a href="contact" class="custom-button active">contact us</a>
+        </div>
+    </div>
+</section>
+<!-- ==========call-in-section========== -->
+
+
+<!-- ==========footer-section========== -->
+
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/modernizr-3.6.0.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/isotope.pkgd.min.js"></script>
+<script src="/js/jquery.ripples-min.js"></script>
+<script src="/js/lightcase.js"></script>
+<script src="/js/swiper.min.js"></script>
+<script src="/js/wow.min.js"></script>
+<script src="/js/countdown.min.js"></script>
+<script src="/js/odometer.min.js"></script>
+<script src="/js/viewport.jquery.js"></script>
+<script src="/js/nice-select.js"></script>
+<script src="/js/main.js"></script>
+</body>
+
+
+<!-- instructors.html  22 Nov 2019 04:22:24 GMT -->
+</html>
